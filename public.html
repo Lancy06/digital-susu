@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital Susu MVP</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f4f9;
+    margin: 0; padding: 0;
+  }
+
+  h1 { text-align: center; color: #2c3e50; margin-top: 20px; }
+
+  /* Two-column layout */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+  }
+
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 600px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+  }
+
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none; border-radius: 5px;
+    cursor: pointer; font-weight: bold; color: #fff;
+  }
+  #createBtn { background: #3498db; }
+  #depositBtn { background: #2ecc71; }
+  button:disabled { background: #ccc; cursor: not-allowed; }
+
+  input { padding: 7px; width: 200px; border-radius: 5px; border: 1px solid #ccc; margin: 5px; }
+
+  table { display: none; border-collapse: collapse; width: 100%; background: #fff; border-radius: 8px; overflow: hidden; }
+  table, th, td { border: 1px solid #ccc; }
+  th, td { padding: 5px; text-align: center; font-size: 0.9em; }
+  .countdown { font-weight: bold; color: #e67e22; }
+
+</style>
+</head>
+<body>
+
+<h1>Digital Susu MVP</h1>
+
+<div class="container">
+  <!-- Left: Cards -->
+  <div class="left-column">
+    <div class="card">
+      <h2>Wallet</h2>
+      <button id="createBtn">Create Wallet</button>
+      <p id="walletInfo">No wallet yet</p>
+    </div>
+
+    <div class="card">
+      <h2>Deposit</h2>
+      <input type="text" id="depositSeed" placeholder="Enter wallet seed">
+      <button id="depositBtn">Deposit 10 XRP</button>
+      <p id="depositInfo">No deposit yet</p>
+    </div>
+  </div>
+
+  <!-- Right: Tables -->
+  <div class="right-column">
+    <div class="card">
+      <h2>Wallets</h2>
+      <table id="walletTable">
+        <thead>
+          <tr><th>#</th><th>Address</th><th>Seed</th><th>Created At</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Deposits</h2>
+      <table id="depositTable">
+        <thead>
+          <tr><th>#</th><th>Wallet</th><th>Sequence</th><th>Amount</th><th>Status</th><th>Countdown</th><th>Action</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="./script.js"></script>
+
+</body>
+</html>
