@@ -223,26 +223,39 @@ project-root/
 
 ---
 
-# Installation
+## Installation
 
-### 1. Install Dependencies
+Prerequisites
+- Node.js v16+ and npm
+- Git
+
+Quick install and run (macOS)
 
 ```bash
+# clone the repo
+git clone git@github.com:Lancy06/digital-susu.git
+cd digital-susu
+
+# install dependencies
 npm install
-```
 
-### 2. Run Server
-
-```bash
+# start the server
 node server.js
-```
 
-### 3. Open in Browser
-
-```
+# open the app
+# in your browser:
 http://localhost:3000
 ```
 
+Notes
+- The app uses the XRPL Testnet. Do NOT use mainnet seeds/funds.
+- If you see "Cannot GET /" ensure server.js is running and serving public.html (server.js included in repo).
+- If you want automatic restarts during development, install nodemon: npm install -g nodemon && nodemon server.js
+- Recommended: set NODE_ENV=development when working locally.
+
+Troubleshooting
+- "Authentication failed" when pushing to GitHub: use SSH or a Personal Access Token (PAT).
+- "zsh: command not found: brew" — Homebrew not installed; not required to run
 ---
 
 # What This MVP Demonstrates
